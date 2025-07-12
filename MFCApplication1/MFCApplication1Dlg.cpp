@@ -34,6 +34,9 @@ void CMFCApplication1Dlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CMFCApplication1Dlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON1, &CMFCApplication1Dlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON2, &CMFCApplication1Dlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &CMFCApplication1Dlg::OnBnClickedButton3)
 END_MESSAGE_MAP()
 
 
@@ -47,15 +50,6 @@ BOOL CMFCApplication1Dlg::OnInitDialog()
 	//  Framework は、この設定を自動的に行います。
 	SetIcon(m_hIcon, TRUE);			// 大きいアイコンの設定
 	SetIcon(m_hIcon, FALSE);		// 小さいアイコンの設定
-
-	CString text, tmp;
-	text += "Press Enter to continue...\n";
-	text += "Rand:";
-	tmp.Format(_T("%d\n"), WrapperClass::WrapperFunction1());
-	text += tmp;
-	text += "KeyCertPair: ";
-	text += WrapperClass::WrapperFunction2().c_str();
-	m_textEdit.SetWindowTextW(text);
 
 	return TRUE;  // フォーカスをコントロールに設定した場合を除き、TRUE を返します。
 }
@@ -96,3 +90,30 @@ HCURSOR CMFCApplication1Dlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+void CMFCApplication1Dlg::OnBnClickedButton1()
+{
+	CString text, tmp;
+	text += "Rand:";
+	tmp.Format(_T("%d\n"), WrapperClass::WrapperFunction1());
+	text += tmp;
+	m_textEdit.SetWindowTextW(text);
+}
+
+void CMFCApplication1Dlg::OnBnClickedButton2()
+{
+	CString text, tmp;
+	text += tmp;
+	text += "KeyCertPair: ";
+	text += WrapperClass::WrapperFunction2().c_str();
+	m_textEdit.SetWindowTextW(text);
+}
+
+void CMFCApplication1Dlg::OnBnClickedButton3()
+{
+	CString text, tmp;
+	text += tmp;
+	text += "Message Pack attribute: ";
+	text += WrapperClass::WrapperFunction3().c_str();
+	m_textEdit.SetWindowTextW(text);
+}

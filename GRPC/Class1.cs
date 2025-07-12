@@ -1,4 +1,6 @@
-﻿namespace GRPC
+﻿using MessagePack;
+
+namespace GRPC
 {
     public class Class1
     {
@@ -19,5 +21,11 @@
                 "DQEBAQUAA4IBDwAwggEKAoIBAQCy7d8f8+6v7d8f8+6v7d8f8+6v7d8f8+6v7d8f\n"
                 );
         }
+
+        public MessagePackFormatterAttribute GetMessagePackFormatterAttribute()
+        {
+            return new MessagePackFormatterAttribute(typeof(Class1));
+        }
+
     }
 }

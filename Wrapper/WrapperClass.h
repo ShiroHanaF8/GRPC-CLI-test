@@ -6,5 +6,6 @@ class WrapperClass
 public:
 	_declspec(dllexport) static int WrapperFunction1();
 	_declspec(dllexport) static std::wstring WrapperFunction2();
+	_declspec(dllexport) static std::wstring WrapperFunction3();
 };
 

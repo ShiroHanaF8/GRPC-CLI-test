@@ -32,4 +32,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	CEdit m_textEdit;
+	afx_msg void OnBnClickedButton1();
+	afx_msg void OnBnClickedButton2();
+	afx_msg void OnBnClickedButton3();
 };

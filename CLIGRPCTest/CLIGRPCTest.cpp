@@ -10,13 +10,26 @@ int main()
 
     while(true)
     {
-        std::wcout << "Press Enter to continue...\n";
-        std::wcout << "Rand:";
-		std::wcout << WrapperClass::WrapperFunction1() << "\n";
-		std::wcout << "KeyCertPair: ";
-		std::wcout << WrapperClass::WrapperFunction2() << "\n";
-        std::wcout << "Continuing...\n";
-        std::cin.get(); // ユーザーがEnterキーを押すまで待機
+		std::wcout << "1: Rand int 2: GRPC KeyCertPair 3: Message Pack attribute\n";
+        const wchar_t input = std::wcin.get(); // ユーザーがEnterキーを押すまで待機
+        switch (input) {
+        case '1':
+            std::wcout << "Rand:";
+            std::wcout << WrapperClass::WrapperFunction1() << "\n";
+            break;
+		case '2':
+            std::wcout << "GRPC KeyCertPair: ";
+            std::wcout << WrapperClass::WrapperFunction2() << "\n";
+            break;
+		case '3':
+            std::wcout << "Message Pack attribute: ";
+            std::wcout << WrapperClass::WrapperFunction3() << "\n";
+            break;
+        case 'e':
+            return 0;
+            break;
+        }
+        std::wcout << "Press input...\n";
 	}
 }
 
