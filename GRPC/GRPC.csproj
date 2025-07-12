@@ -8,8 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.Net.Common" Version="2.71.0" />
     <PackageReference Include="MessagePack" Version="3.1.4" />
   </ItemGroup>
-
 </Project>
