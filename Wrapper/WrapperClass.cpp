@@ -9,7 +9,7 @@ int WrapperClass::WrapperFunction1()
 
 std::wstring WrapperClass::WrapperFunction2()
 {
-	GRPC::Class1^ wrapper = gcnew GRPC::Class1();
-	System::String^ typeStr = wrapper->GetMessagePackType().ToString();
-	return msclr::interop::marshal_as<std::wstring>(typeStr);
+    GRPC::Class1^ wrapper = gcnew GRPC::Class1();
+    System::String^ keyCertPair = wrapper->GetKeyCertificatePair()->ToString();
+	return msclr::interop::marshal_as<std::wstring>(keyCertPair);
 }
